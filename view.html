@@ -16,7 +16,7 @@
 
         <a class="brand" href="#">Gi-CollectionFS{{> connectionStatus}}</a>
         <!-- Main menu Current Folder -->
-        {{loginButtons}}
+        {{> loginButtons}}
 
         {{> mainMenu}}
       </div> <!-- container -->  
@@ -108,41 +108,41 @@ Filesystem.fileHandlers({
         {{#with getSession 'filter'}}
           <h4>Filter options</h4>
           <select id="sortby" class=".sortby">
-            <option value=""{{isSelected sortBy ''}}>No sorting</option>
-            <option value="uploadDate"{{isSelected sortBy 'uploadDate'}}>Sort by uploadDate</option>
-            <option value="filename"{{isSelected sortBy 'filename'}}>Sort by filename</option>
-            <option value="handledAt"{{isSelected sortBy 'handledAt'}}>Sort by handledAt</option>
-            <option value="complete"{{isSelected sortBy 'complete'}}>Sort by complete</option>
-            <option value="currentChunk"{{isSelected sortBy 'currentChunk'}}>Sort by currentChunk</option>
-            <option value="countChunks"{{isSelected sortBy 'countChunks'}}>Sort by countChunks</option>
-            <option value="numChunks"{{isSelected sortBy 'numChunks'}}>Sort by numChunks</option>
-            <option value="length"{{isSelected sortBy 'length'}}>Sort by length</option>
-            <option value="contentType"{{isSelected sortBy 'contentType'}}>Sort by contentType</option>
-            <option value="owner"{{isSelected sortBy 'owner'}}>Sort by owner id</option>
-            <option value="_id"{{isSelected sortBy '_id'}}>Sort by hash id</option>
+            <option value="" {{isSelected sortBy ''}}>No sorting</option>
+            <option value="uploadDate" {{isSelected sortBy 'uploadDate'}}>Sort by uploadDate</option>
+            <option value="filename" {{isSelected sortBy 'filename'}}>Sort by filename</option>
+            <option value="handledAt" {{isSelected sortBy 'handledAt'}}>Sort by handledAt</option>
+            <option value="complete" {{isSelected sortBy 'complete'}}>Sort by complete</option>
+            <option value="currentChunk" {{isSelected sortBy 'currentChunk'}}>Sort by currentChunk</option>
+            <option value="countChunks" {{isSelected sortBy 'countChunks'}}>Sort by countChunks</option>
+            <option value="numChunks" {{isSelected sortBy 'numChunks'}}>Sort by numChunks</option>
+            <option value="length" {{isSelected sortBy 'length'}}>Sort by length</option>
+            <option value="contentType" {{isSelected sortBy 'contentType'}}>Sort by contentType</option>
+            <option value="owner" {{isSelected sortBy 'owner'}}>Sort by owner id</option>
+            <option value="_id" {{isSelected sortBy '_id'}}>Sort by hash id</option>
           </select>
-          <input id="reversed" type="checkbox"{{isChecked reversed true}}/> Reverse
+          <input id="reversed" type="checkbox" {{isChecked reversed true}}/> Reverse
           <br/>
           <select id="limit" class=".limit">
-            <option value="0"{{isSelected limit 0}}>No limit</option>
-            <option value="5"{{isSelected limit 5}}>Limit to 5</option>
-            <option value="10"{{isSelected limit 10}}>Limit to 10</option>
-            <option value="25"{{isSelected limit 25}}>Limit to 25</option>
-            <option value="50"{{isSelected limit 50}}>Limit to 50</option>
+            <option value="0" {{isSelected limit 0}}>No limit</option>
+            <option value="5" {{isSelected limit 5}}>Limit to 5</option>
+            <option value="10" {{isSelected limit 10}}>Limit to 10</option>
+            <option value="25" {{isSelected limit 25}}>Limit to 25</option>
+            <option value="50" {{isSelected limit 50}}>Limit to 50</option>
           </select>
         {{/with}}
         </td><td>
         {{#with getSession 'filter'}}
           <h4>Show</h4>
           <select id="owner" class=".owner">
-            <option value="0"{{isSelected owner false}}>All files</option>
-            <option value="1"{{isSelected owner true}}>Only my files</option>
+            <option value="0" {{isSelected owner false}}>All files</option>
+            <option value="1" {{isSelected owner true}}>Only my files</option>
           </select>
           <br/>
           <select id="completed" class=".completed">
-            <option value=""{{isSelected completed ''}}>All</option>
-            <option value="1"{{isSelected completed true}}>Completed</option>
-            <option value="0"{{isSelected completed flase}}>Uncompleted</option>
+            <option value="" {{isSelected completed ''}}>All</option>
+            <option value="1" {{isSelected completed true}}>Completed</option>
+            <option value="0" {{isSelected completed flase}}>Uncompleted</option>
           </select>
         {{/with}}
       </td>

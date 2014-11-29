@@ -333,10 +333,12 @@ Template.supportInfo.helpers({
   }  
 });
 
-Template.connectionStatus.connection = function() {
-  Meteor.status().waiting = (Meteor.status().status == 'waiting');
-  return Meteor.status();
-};
+Template.connectionStatus.helpers({
+  connection: function() {
+    Meteor.status().waiting = (Meteor.status().status == 'waiting');
+    return Meteor.status();
+  }
+});
 
 Template.mainMenu.events({
   'click .btnMainMenuDashboard' : function () {
